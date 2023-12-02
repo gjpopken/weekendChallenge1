@@ -1,6 +1,7 @@
-console.log('client is running');
+let totalOfSalaries = 0
 
 
+// When submit button is pressed, this function is called. 
 function handlesSubmit(event) {
     event.preventDefault();
     //console.log('in handlessubmit');
@@ -40,10 +41,28 @@ function handlesSubmit(event) {
     //console.log(tr);
     tbody.append(tr)
 
+    addToTotalOfSalaries(annualSalary.value)
+
     firstName.value = ''
     lastName.value = ''
     emplID.value = ''
     jobTitle.value = ''
     annualSalary.value = ''
 
+    addToTotalOfSalaries(annualSalary.value)
+
+}
+
+// A function that will take an amount and add it to the total amount of salaries in the table
+function addToTotalOfSalaries(amount) {
+    let spanTotalIncome = document.getElementById('total-of-salaries')
+    
+
+    if (Number(amount)) {
+        totalOfSalaries += Number(amount)
+    }
+
+
+
+    console.log(totalOfSalaries);
 }
