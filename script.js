@@ -3,6 +3,9 @@ let totalOfSalaries = 0
 
 // When submit button is pressed, this function is called. 
 function handlesSubmit(event) {
+
+// ADD: add a function to check if all the inputs are full
+
     event.preventDefault();
     //console.log('in handlessubmit');
 
@@ -38,7 +41,6 @@ function handlesSubmit(event) {
     //console.log(tdFirstName, tdLastName, tdEmplID, tdJobTitle, tdAnnualSalary);
 
     tr.append(tdFirstName, tdLastName, tdEmplID, tdJobTitle, tdAnnualSalary)
-    //console.log(tr);
     tbody.append(tr)
 
     addToTotalOfSalaries(annualSalary.value)
@@ -48,21 +50,20 @@ function handlesSubmit(event) {
     emplID.value = ''
     jobTitle.value = ''
     annualSalary.value = ''
-
-    addToTotalOfSalaries(annualSalary.value)
-
 }
 
 // A function that will take an amount and add it to the total amount of salaries in the table
 function addToTotalOfSalaries(amount) {
     let spanTotalIncome = document.getElementById('total-of-salaries')
-    
-
     if (Number(amount)) {
         totalOfSalaries += Number(amount)
     }
 
+    // Adding the totalOfSalaries to the DOM
+    spanTotalIncome.innerText = `$${totalOfSalaries}`
 
-
-    console.log(totalOfSalaries);
+    // toggling a class to apply a class to the span that has the number
+    if (totalOfSalaries > 20000) {
+        spanTotalIncome.classList.toggle('over-budget')
+    }
 }
