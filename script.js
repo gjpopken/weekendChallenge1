@@ -18,33 +18,45 @@ function handlesSubmit(event) {
 
     //console.log(firstName, lastName, emplID, jobTitle, annualSalary);
     
-    
-    // Creating elements to append to the table
-    let tdFirstName = document.createElement('td')
-    let tdLastName = document.createElement('td')
-    let tdEmplID = document.createElement('td')
-    let tdJobTitle = document.createElement('td')
-    let tdAnnualSalary = document.createElement('td')
-    let tdDeleteButton = document.createElement('td')
-    tdDeleteButton.innerHTML = '<button onclick="deleteRow(event)">Delete</button>'
-    //console.log(tdDeleteButton);
+    // // Creating elements to append to the table
+    // let tdFirstName = document.createElement('td')
+    // let tdLastName = document.createElement('td')
+    // let tdEmplID = document.createElement('td')
+    // let tdJobTitle = document.createElement('td')
+    // let tdAnnualSalary = document.createElement('td')
+    // let tdDeleteButton = document.createElement('td')
+    // tdDeleteButton.innerHTML = '<button onclick="deleteRow(event)">Delete</button>'
+    // //console.log(tdDeleteButton);
 
-    let tr = document.createElement('tr')
-    let tbody = document.getElementById('table-body')
+    // let tr = document.createElement('tr')
+    // let tbody = document.getElementById('table-body')
 
 
-    // Assigning the values of inputs to the innerText of the created elements
-    // Refactored as an object?
-    tdFirstName.innerText = firstName.value
-    tdLastName.innerText = lastName.value
-    tdEmplID.innerText = emplID.value
-    tdJobTitle.innerText = jobTitle.value
-    tdAnnualSalary.innerText = annualSalary.value
+    // // Assigning the values of inputs to the innerText of the created elements
+    // // Refactored as an object?
+    // tdFirstName.innerText = firstName.value
+    // tdLastName.innerText = lastName.value
+    // tdEmplID.innerText = emplID.value
+    // tdJobTitle.innerText = jobTitle.value
+    // tdAnnualSalary.innerText = annualSalary.value
 
     //console.log(tdFirstName, tdLastName, tdEmplID, tdJobTitle, tdAnnualSalary);
 
-    tr.append(tdFirstName, tdLastName, tdEmplID, tdJobTitle, tdAnnualSalary, tdDeleteButton)
-    tbody.append(tr)
+ 
+     //tr.append(tdFirstName, tdLastName, tdEmplID, tdJobTitle, tdAnnualSalary, tdDeleteButton)
+    //tbody.append(tr)
+
+       // Trying something new
+       document.getElementById('table-body').innerHTML += `
+       <tr>
+        <td>${firstName.value}</td>
+        <td>${lastName.value}</td>
+        <td>${emplID.value}</td>
+        <td>${jobTitle.value}</td>
+        <td>${annualSalary.value}</td>
+        <td><button onclick="deleteRow(event)">Delete</button></td>
+       </tr>
+       `
 
     addToTotalOfSalaries(annualSalary.value)
 
