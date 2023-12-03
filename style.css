@@ -5,3 +5,17 @@
 .over-budget {
     color: red;
 }
+
+body {
+    padding: 25px;
+}
+
+td {
+    /* border: 1px solid black; */
+    min-width: 100px;
+    min-height: 100px;
+}
+
+tbody {
+    border-color: red;
+}
