@@ -25,6 +25,9 @@ function handlesSubmit(event) {
     let tdEmplID = document.createElement('td')
     let tdJobTitle = document.createElement('td')
     let tdAnnualSalary = document.createElement('td')
+    let tdDeleteButton = document.createElement('td')
+    tdDeleteButton.innerHTML = '<button onclick="deleteRow(event)">Delete</button>'
+    //console.log(tdDeleteButton);
 
     let tr = document.createElement('tr')
     let tbody = document.getElementById('table-body')
@@ -40,7 +43,7 @@ function handlesSubmit(event) {
 
     //console.log(tdFirstName, tdLastName, tdEmplID, tdJobTitle, tdAnnualSalary);
 
-    tr.append(tdFirstName, tdLastName, tdEmplID, tdJobTitle, tdAnnualSalary)
+    tr.append(tdFirstName, tdLastName, tdEmplID, tdJobTitle, tdAnnualSalary, tdDeleteButton)
     tbody.append(tr)
 
     addToTotalOfSalaries(annualSalary.value)
@@ -64,6 +67,14 @@ function addToTotalOfSalaries(amount) {
 
     // toggling a class to apply a class to the span that has the number
     if (totalOfSalaries > 20000) {
-        spanTotalIncome.classList.toggle('over-budget')
+        document.querySelector('footer').classList.toggle('over-budget')
     }
+}
+
+
+function deleteRow(event) {
+    //console.log('entered deleteRow');
+    event.target.parentElement.parentElement.remove()
+
+
 }
