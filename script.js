@@ -67,7 +67,7 @@ function addToTotalOfSalaries(amount) {
 
     // toggling a class to apply a class to the span that has the number
     if (totalOfSalaries > 20000) {
-        document.querySelector('footer').classList.toggle('over-budget')
+        document.querySelector('footer').classList.add('over-budget')
     }
 }
 
