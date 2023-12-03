@@ -69,13 +69,19 @@ function handlesSubmit(event) {
 
 // A function that will take an amount and add it to the total amount of salaries in the table
 function addToTotalOfSalaries(amount) {
-    let spanTotalIncome = document.getElementById('total-of-salaries')
+    // let spanTotalIncome = document.getElementById('total-of-salaries')
+    // if (Number(amount)) {
+    //     totalOfSalaries += Number(amount)
+    // }
+
+    // // Adding the totalOfSalaries to the DOM
+    // spanTotalIncome.innerText = `$${totalOfSalaries}`
+
+    //Trying Something Different
     if (Number(amount)) {
         totalOfSalaries += Number(amount)
     }
-
-    // Adding the totalOfSalaries to the DOM
-    spanTotalIncome.innerText = `$${totalOfSalaries}`
+    document.querySelector('span').innerHTML = `$${totalOfSalaries}`
 
     // toggling a class to apply a class to the span that has the number
     if (totalOfSalaries > 20000) {
