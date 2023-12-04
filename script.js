@@ -81,7 +81,9 @@ function addToTotalOfSalaries(amount) {
     if (Number(amount)) {
         totalOfSalaries += Number(amount)
     }
-    document.querySelector('span').innerHTML = `$${totalOfSalaries}`
+
+    let roundedMonthlySal = totalOfSalaries/12
+    document.querySelector('span').innerHTML = `$${roundedMonthlySal.toFixed(2)}`
 
     // toggling a class to apply a class to the span that has the number
     if (totalOfSalaries > 20000) {
