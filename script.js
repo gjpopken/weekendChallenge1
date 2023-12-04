@@ -4,7 +4,7 @@ let totalOfSalaries = 0
 // When submit button is pressed, this function is called. 
 function handlesSubmit(event) {
 
-// ADD: add a function to check if all the inputs are full
+    // ADD: add a function to check if all the inputs are full
 
     event.preventDefault();
     //console.log('in handlessubmit');
@@ -17,7 +17,7 @@ function handlesSubmit(event) {
     let annualSalary = document.getElementById('annual-salary')
 
     //console.log(firstName, lastName, emplID, jobTitle, annualSalary);
-    
+
     // // Creating elements to append to the table
     // let tdFirstName = document.createElement('td')
     // let tdLastName = document.createElement('td')
@@ -42,12 +42,12 @@ function handlesSubmit(event) {
 
     //console.log(tdFirstName, tdLastName, tdEmplID, tdJobTitle, tdAnnualSalary);
 
- 
-     //tr.append(tdFirstName, tdLastName, tdEmplID, tdJobTitle, tdAnnualSalary, tdDeleteButton)
+
+    //tr.append(tdFirstName, tdLastName, tdEmplID, tdJobTitle, tdAnnualSalary, tdDeleteButton)
     //tbody.append(tr)
 
-       // Trying something new
-       document.getElementById('table-body').innerHTML += `
+    // Trying something new
+    document.getElementById('table-body').innerHTML += `
        <tr>
         <td>${firstName.value}</td>
         <td>${lastName.value}</td>
@@ -82,7 +82,7 @@ function addToTotalOfSalaries(amount) {
         totalOfSalaries += Number(amount)
     }
 
-    let roundedMonthlySal = totalOfSalaries/12
+    let roundedMonthlySal = totalOfSalaries / 12
     document.querySelector('span').innerHTML = `$${roundedMonthlySal.toFixed(2)}`
 
     // toggling a class to apply a class to the span that has the number
