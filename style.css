@@ -1,6 +1,6 @@
-* {
+/* * {
     border: 1px solid black;
-}
+} */
 
 .over-budget {
     color: red;
@@ -11,11 +11,24 @@ body {
 }
 
 td {
-    /* border: 1px solid black; */
+    border: 1px solid black;
     min-width: 100px;
     min-height: 100px;
 }
 
-tbody {
-    border-color: red;
+/*tbody {
+    border: 1px solid red;
+} */
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: bisque;
+}
+
+span {
+    margin-left: 50px;
 }
