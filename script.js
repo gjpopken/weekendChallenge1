@@ -94,6 +94,15 @@ function addToTotalOfSalaries(amount) {
 
 function deleteRow(event) {
     //console.log('entered deleteRow');
+
+    //STRETCH
+    let parent = event.target.parentElement.parentElement
+    console.log('parent:', parent);
+    let child = parent.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.innerHTML
+    console.log(child);
+
+    addToTotalOfSalaries(-Number(child))
+    
     event.target.parentElement.parentElement.remove()
 
 
